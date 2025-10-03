@@ -9,6 +9,7 @@ import { setupReferences } from './modules/references.js';
 import { setupSummary } from './modules/summary.js';
 import { setupExport } from './modules/export.js';
 import { loadSampleData } from './modules/sampleData.js';
+import { CoverLetterManager } from './modules/coverLetter.js';
 
 // Template functionality
 let availableTemplates = [];
@@ -504,6 +505,9 @@ document.addEventListener('DOMContentLoaded', () => {
   setupTemplateSelector();
   loadTemplates();
   setupLivePreview();
+  
+  // Initialize cover letter manager
+  window.coverLetterManager = new CoverLetterManager();
   
   // Uncomment to load sample data for testing
   // loadSampleData();

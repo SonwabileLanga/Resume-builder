@@ -216,10 +216,42 @@
               </div>
             </div>
             
-            <div class="resume-section">
+            <div class="resume-section mb-4 lg:mb-6">
               <h2 class="text-lg lg:text-xl font-bold text-gray-800 mb-2 lg:mb-3 border-b-2 border-primary-500 pb-1 lg:pb-2">References</h2>
               <div id="preview-references">
                 <p class="text-gray-500 italic text-sm lg:text-base">Add references to see them here.</p>
+              </div>
+            </div>
+
+            <!-- Cover Letter Preview Section -->
+            <div class="resume-section" id="cover-letter-preview" style="display: none;">
+              <h2 class="text-lg lg:text-xl font-bold text-gray-800 mb-2 lg:mb-3 border-b-2 border-accent-500 pb-1 lg:pb-2">Cover Letter</h2>
+              <div id="preview-cover-letter" class="bg-gray-50 rounded-lg p-4 lg:p-6">
+                <div class="cover-letter-content">
+                  <div class="cover-letter-header mb-4">
+                    <div class="text-right text-sm text-gray-600 mb-4">
+                      <p id="preview-cover-date"></p>
+                    </div>
+                    <div class="mb-4">
+                      <p id="preview-cover-company" class="font-semibold text-gray-800"></p>
+                      <p id="preview-cover-address" class="text-sm text-gray-600"></p>
+                    </div>
+                    <div class="mb-4">
+                      <p id="preview-cover-greeting" class="text-gray-800"></p>
+                    </div>
+                  </div>
+                  
+                  <div class="cover-letter-body space-y-4 text-sm lg:text-base text-gray-700 leading-relaxed">
+                    <p id="preview-cover-opening"></p>
+                    <p id="preview-cover-body"></p>
+                    <p id="preview-cover-closing"></p>
+                  </div>
+                  
+                  <div class="cover-letter-footer mt-6">
+                    <p class="text-gray-800">Sincerely,</p>
+                    <p id="preview-cover-signature" class="mt-4 text-gray-800"></p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -295,6 +327,14 @@
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
                 </svg>
                 <span class="text-center">References</span>
+              </div>
+            </button>
+            <button class="section-btn px-3 py-3 sm:px-4 sm:py-2 bg-white/20 text-white rounded-lg hover:bg-white/30 transition-all duration-200 text-xs sm:text-sm font-medium" data-section="cover-letter">
+              <div class="flex flex-col sm:flex-row items-center gap-1 sm:gap-2">
+                <svg class="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                </svg>
+                <span class="text-center">Cover Letter</span>
               </div>
             </button>
           </div>
@@ -502,6 +542,92 @@
               + Add Reference
             </button>
           </div>
+
+          <!-- Cover Letter Section -->
+          <div class="form-section hidden" id="cover-letter-section">
+            <div class="mb-4 lg:mb-6">
+              <h2 class="text-xl lg:text-2xl font-bold text-gray-800 mb-2 flex items-center gap-2 lg:gap-3">
+                <div class="w-6 h-6 lg:w-8 lg:h-8 bg-accent-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <svg class="w-4 h-4 lg:w-5 lg:h-5 text-accent-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                  </svg>
+                </div>
+                <span class="text-lg lg:text-2xl">Cover Letter</span>
+              </h2>
+              <p class="text-gray-600 text-sm">Create a compelling cover letter to accompany your resume</p>
+            </div>
+            
+            <div class="space-y-6">
+              <!-- Cover Letter Template Selection -->
+              <div class="space-y-2">
+                <label for="coverLetterTemplate" class="block text-sm font-medium text-gray-700">Cover Letter Template</label>
+                <select id="coverLetterTemplate" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 bg-gray-50 focus:bg-white">
+                  <option value="professional">Professional</option>
+                  <option value="creative">Creative</option>
+                  <option value="modern">Modern</option>
+                  <option value="minimalist">Minimalist</option>
+                </select>
+              </div>
+
+              <!-- Job Information -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="space-y-2">
+                  <label for="jobTitle" class="block text-sm font-medium text-gray-700">Job Title *</label>
+                  <input type="text" id="coverJobTitle" placeholder="Software Engineer" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 bg-gray-50 focus:bg-white">
+                </div>
+                <div class="space-y-2">
+                  <label for="companyName" class="block text-sm font-medium text-gray-700">Company Name *</label>
+                  <input type="text" id="companyName" placeholder="Tech Company Inc." class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 bg-gray-50 focus:bg-white">
+                </div>
+              </div>
+
+              <!-- Hiring Manager Information -->
+              <div class="space-y-2">
+                <label for="hiringManager" class="block text-sm font-medium text-gray-700">Hiring Manager Name (Optional)</label>
+                <input type="text" id="hiringManager" placeholder="John Smith" class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 bg-gray-50 focus:bg-white">
+              </div>
+
+              <!-- Cover Letter Content -->
+              <div class="space-y-4">
+                <div class="space-y-2">
+                  <label for="coverLetterOpening" class="block text-sm font-medium text-gray-700">Opening Paragraph *</label>
+                  <textarea id="coverLetterOpening" rows="3" placeholder="I am writing to express my strong interest in the [Job Title] position at [Company Name]. With my background in [relevant experience], I am confident that I would be a valuable addition to your team." class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 bg-gray-50 focus:bg-white resize-none"></textarea>
+                </div>
+
+                <div class="space-y-2">
+                  <label for="coverLetterBody" class="block text-sm font-medium text-gray-700">Body Paragraph(s) *</label>
+                  <textarea id="coverLetterBody" rows="6" placeholder="In my current role as [Current Position], I have successfully [achievement 1]. I have also [achievement 2], which directly relates to the requirements for this position. My experience with [relevant skill] and [another skill] makes me well-suited for this role." class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 bg-gray-50 focus:bg-white resize-none"></textarea>
+                </div>
+
+                <div class="space-y-2">
+                  <label for="coverLetterClosing" class="block text-sm font-medium text-gray-700">Closing Paragraph *</label>
+                  <textarea id="coverLetterClosing" rows="3" placeholder="I am excited about the opportunity to contribute to [Company Name] and would welcome the chance to discuss how my skills and experience align with your needs. Thank you for considering my application. I look forward to hearing from you." class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200 bg-gray-50 focus:bg-white resize-none"></textarea>
+                </div>
+              </div>
+
+              <!-- Additional Options -->
+              <div class="space-y-4">
+                <div class="flex items-center space-x-3">
+                  <input type="checkbox" id="includeResume" class="w-4 h-4 text-primary-600 border-gray-300 rounded focus:ring-primary-500">
+                  <label for="includeResume" class="text-sm font-medium text-gray-700">Include resume attachment reference</label>
+                </div>
+                <div class="flex items-center space-x-3">
+                  <input type="checkbox" id="followUp" class="w-4 h-4 text-primary-600 border-gray-300 rounded focus:ring-primary-500">
+                  <label for="followUp" class="text-sm font-medium text-gray-700">Include follow-up statement</label>
+                </div>
+              </div>
+
+              <!-- Action Buttons -->
+              <div class="flex flex-col sm:flex-row gap-3">
+                <button id="previewCoverLetter" class="flex-1 px-6 py-3 bg-gradient-to-r from-accent-500 to-accent-600 text-white rounded-xl hover:from-accent-600 hover:to-accent-700 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 font-medium">
+                  Preview Cover Letter
+                </button>
+                <button id="exportCoverLetter" class="flex-1 px-6 py-3 bg-gradient-to-r from-primary-500 to-primary-600 text-white rounded-xl hover:from-primary-600 hover:to-primary-700 transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 font-medium">
+                  Export Cover Letter
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
 
     </main>
@@ -545,6 +671,27 @@
       <div class="p-4 lg:p-6">
         <div id="templatePreview" class="rounded-lg overflow-hidden border border-gray-200">
           <iframe id="templateFrame" src="" class="w-full h-[400px] sm:h-[500px] lg:h-[600px] border-0"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cover Letter Preview Modal -->
+  <div id="coverLetterModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden items-center justify-center p-2 sm:p-4">
+    <div class="bg-white rounded-2xl shadow-2xl max-w-4xl w-full max-h-[95vh] overflow-hidden">
+      <div class="bg-gradient-to-r from-accent-500 to-accent-600 p-4 lg:p-6">
+        <div class="flex items-center justify-between">
+          <h2 class="text-white text-lg lg:text-2xl font-bold">Cover Letter Preview</h2>
+          <button id="closeCoverLetterModal" class="text-white hover:text-gray-200 transition-colors duration-200">
+            <svg class="w-6 h-6 lg:w-8 lg:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="p-4 lg:p-6 overflow-y-auto max-h-[80vh]">
+        <div id="coverLetterPreviewContent" class="bg-white border border-gray-200 rounded-lg p-6 lg:p-8">
+          <!-- Cover letter content will be rendered here -->
         </div>
       </div>
     </div>
