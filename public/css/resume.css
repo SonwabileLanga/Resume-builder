@@ -1,0 +1,213 @@
+.resume {
+  background-color: white;
+  padding: 30px;
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
+  font-size: 14px;
+}
+
+.resume-header {
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.header-content {
+  width: 100%;
+}
+
+.resume h1 {
+  font-size: 28px;
+  margin-bottom: 5px;
+  color: var(--text-color);
+}
+
+.resume-header p {
+  margin-bottom: 10px;
+  color: var(--dark-gray);
+}
+
+.resume-header #preview-title {
+  font-size: 18px;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+.contact-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+.contact-links {
+  margin-top: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+.contact-links a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-size: 13px;
+  margin-right: 15px;
+}
+
+.contact-links a:hover {
+  text-decoration: underline;
+}
+
+.resume-section {
+  margin-bottom: 25px;
+}
+
+.resume-section h2 {
+  font-size: 18px;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--medium-gray);
+}
+
+.experience-item, .education-item, .project-item {
+  margin-bottom: 15px;
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.item-title {
+  font-weight: 600;
+}
+
+.item-subtitle {
+  color: var(--dark-gray);
+}
+
+.item-date {
+  color: var(--dark-gray);
+  font-size: 13px;
+}
+
+.item-description {
+  margin-top: 5px;
+  white-space: pre-line;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-item {
+  background-color: var(--light-gray);
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 13px;
+}
+
+.language-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.language-level {
+  color: var(--dark-gray);
+  font-size: 13px;
+}
+
+@media print {
+  body {
+    background-color: white;
+  }
+  
+  .app-container {
+    padding: 0;
+    max-width: none;
+  }
+  
+  header, .sidebar, .form-container {
+    display: none;
+  }
+  
+  .editor-container {
+    display: block;
+    height: auto;
+  }
+  
+  .preview-container {
+    height: auto;
+    overflow: visible;
+    padding: 0;
+    box-shadow: none;
+    background-color: white;
+  }
+  
+  .resume {
+    box-shadow: none;
+    padding: 0;
+  }
+}
+
+/* References Styles */
+.reference-item {
+  margin-bottom: 15px;
+  padding: 10px;
+  background: var(--light-gray);
+  border-radius: var(--border-radius);
+}
+
+.reference-name {
+  font-weight: bold;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.reference-title {
+  font-style: italic;
+  color: var(--dark-gray);
+  margin-bottom: 3px;
+}
+
+.reference-company {
+  color: var(--dark-gray);
+  margin-bottom: 5px;
+}
+
+.reference-contact {
+  font-size: 14px;
+  color: var(--text-color);
+  margin-bottom: 3px;
+}
+
+.reference-contact span {
+  margin-right: 15px;
+}
+
+.reference-relationship {
+  font-size: 12px;
+  color: var(--dark-gray);
+  font-style: italic;
+}
+
+/* Reason for Leaving Styles */
+.item-reason-leaving {
+  margin-top: 8px;
+  padding: 8px 12px;
+  background: #f8f9fa;
+  border-left: 3px solid var(--primary-color);
+  border-radius: 4px;
+  font-size: 14px;
+  color: var(--text-color);
+}
+
+.item-reason-leaving strong {
+  color: var(--primary-color);
+  font-weight: 600;
+} 
