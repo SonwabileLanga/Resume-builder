@@ -4,7 +4,7 @@ const fs = require('fs');
 const { Document, Packer, Paragraph, TextRun, HeadingLevel } = require('docx');
 
 const app = express();
-const port = 8899;
+const port = process.env.PORT || 8899;
 
 
 // Serve static files
@@ -13,6 +13,11 @@ app.use('/templates', express.static('.'));
 
 // Parse JSON bodies
 app.use(express.json());
+
+// Root route
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
 
 
 // Get available PDF templates
@@ -352,7 +357,12 @@ ${ref.relationship ? `Relationship: ${ref.relationship}` : ''}
 \\end{document}`;
 }
 
-// Start the server
-app.listen(port, '0.0.0.0', () => {
-  console.log(`Resume builder running at http://0.0.0.0:${port}`);
-}); 
+// Start the server (only if not in Vercel environment)
+if (process.env.NODE_ENV !== 'production' || process.env.VERCEL !== '1') {
+  app.listen(port, '0.0.0.0', () => {
+    console.log(`Resume builder running at http://0.0.0.0:${port}`);
+  });
+}
+
+// Export for Vercel
+module.exports = app; 
