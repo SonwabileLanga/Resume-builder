@@ -3,7 +3,6 @@ const path = require('path');
 const { Document, Packer, Paragraph, TextRun, HeadingLevel } = require('docx');
 
 const app = express();
-const port = process.env.PORT || 8899;
 
 // Serve static files
 app.use(express.static('public'));
@@ -433,13 +432,6 @@ ${ref.relationship ? `Relationship: ${ref.relationship}` : ''}
 `).join('')}
 
 \\end{document}`;
-}
-
-// Start the server (only if not in Vercel environment)
-if (process.env.NODE_ENV !== 'production' || process.env.VERCEL !== '1') {
-  app.listen(port, '0.0.0.0', () => {
-    console.log(`Resume builder running at http://0.0.0.0:${port}`);
-  });
 }
 
 // Export for Vercel
